@@ -1,3 +1,7 @@
+# Project specific
+sets.txt
+factorysets*.json
+
 # Logs
 logs
 *.log
