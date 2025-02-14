@@ -1,0 +1,22 @@
+{
+  "name": "pokemon-sets-to-battle-factory",
+  "version": "1.0.0",
+  "description": "Converts a list of Pokemon Showdown Sets to a Pokemon Showdown Battle Factory-esque JSON file",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HisuianZoroark/Pokemon-Sets-To-Battle-Factory.git"
+  },
+  "author": "HiZo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HisuianZoroark/Pokemon-Sets-To-Battle-Factory/issues"
+  },
+  "homepage": "https://github.com/HisuianZoroark/Pokemon-Sets-To-Battle-Factory#readme",
+  "dependencies": {
+    "pokemon-showdown": "^0.11.9"
+  }
+}
