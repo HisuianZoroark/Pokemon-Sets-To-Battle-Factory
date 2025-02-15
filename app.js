@@ -1,4 +1,5 @@
 const PokemonShowdown = require('pokemon-showdown');
+const Stringify = require('json-stringify-pretty-compact');
 const Teams = PokemonShowdown.Teams;
 const Dex = PokemonShowdown.Dex;
 const fs = require('fs');
@@ -53,4 +54,4 @@ for (let i = 0; i < setArr.length; i++) {
   bfjson[tier][curMon].sets.push(curSet);
 }
 
-fs.writeFileSync(`factorysets${tier}.json`, JSON.stringify(bfjson));
+fs.writeFileSync(`factorysets${tier}.json`, Stringify(bfjson, {maxLength: 120, indent: '\t'}));

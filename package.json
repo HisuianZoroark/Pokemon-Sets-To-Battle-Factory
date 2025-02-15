@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/HisuianZoroark/Pokemon-Sets-To-Battle-Factory#readme",
   "dependencies": {
+    "json-stringify-pretty-compact": "^3.0.0",
     "pokemon-showdown": "^0.11.9"
   }
 }
