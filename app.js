@@ -13,11 +13,13 @@ sets = sets.replaceAll('\r\n', '\n');
 
 let setArr = sets.split('\n\n');
 
+bfjson[tier] = {};
+
 for (let i = 0; i < setArr.length; i++) {
   const curSet = Teams.import(setArr[i])[0];
   const curMon = Dex.species.get(curSet.species).id;
-  if (!bfjson[curMon]) {
-    bfjson[curMon] = {weight: 0, sets: []};
+  if (!bfjson[tier][curMon]) {
+    bfjson[tier][curMon] = {weight: 0, sets: []};
   }
   if (curSet.ability.includes('/')) {
     curSet.ability = curSet.ability.split('/').map(s => s.trim());
@@ -48,7 +50,7 @@ for (let i = 0; i < setArr.length; i++) {
   } else {
     delete curSet.teraType;
   }
-  bfjson[curMon].sets.push(curSet);
+  bfjson[tier][curMon].sets.push(curSet);
 }
 
 fs.writeFileSync(`factorysets${tier}.json`, JSON.stringify(bfjson));
