@@ -9,6 +9,8 @@ const tier = 'ou';
 
 let sets = fs.readFileSync('./sets.txt', 'utf8');
 
+sets = sets.replaceAll('\r\n', '\n');
+
 let setArr = sets.split('\n\n');
 
 for (let i = 0; i < setArr.length; i++) {
