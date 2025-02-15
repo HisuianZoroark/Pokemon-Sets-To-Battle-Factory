@@ -1,6 +1,7 @@
 # Project specific
 sets.txt
 factorysets*.json
+package-lock.json
 
 # Logs
 logs
