@@ -8,7 +8,7 @@ const bfjson = Object.create(null);
 const noTera = false; // Set to true if Terastal Clause is active
 const tier = 'ou';
 
-let sets = fs.readFileSync('./sets.txt', 'utf8');
+let sets = fs.readFileSync('./sets.txt', 'utf8').trim();
 
 sets = sets.replaceAll('\r\n', '\n');
 
@@ -44,7 +44,7 @@ for (let i = 0; i < setArr.length; i++) {
     if (curSet.ivs[iv] === 31) delete curSet.ivs[iv];
   }
   if (!Object.keys(curSet.ivs).length) delete curSet.ivs;
-  if (noTera) {
+  if (!noTera) {
     if (curSet.teraType.includes('/')) {
       curSet.teraType = curSet.teraType.split('/').map(s => s.trim());
     }
