@@ -45,7 +45,7 @@ for (let i = 0; i < setArr.length; i++) {
   }
   if (!Object.keys(curSet.ivs).length) delete curSet.ivs;
   if (!noTera) {
-    if (curSet.teraType.includes('/')) {
+    if (curSet.teraType?.includes('/')) {
       curSet.teraType = curSet.teraType.split('/').map(s => s.trim());
     }
   } else {
