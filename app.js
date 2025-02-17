@@ -33,6 +33,13 @@ for (let i = 0; i < setArr.length; i++) {
       curSet.moves[moveIndex] = curSet.moves[moveIndex].split('/').map(s => s.trim());
     }
   }
+  if (!curSet.nature) {
+    // Nature might be slashed and wasn't caught by PS api
+    let natureLine = setArr[i].match(/^(.*)Nature$/m)[0];
+    if (natureLine && natureLine.includes('/')) {
+      curSet.nature = natureLine.replace('Nature', '').split('/').map(s => s.trim());
+    }
+  }
   curSet.weight = 0;
   delete curSet.name;
   if (!curSet.gender) delete curSet.gender;
