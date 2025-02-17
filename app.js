@@ -35,9 +35,9 @@ for (let i = 0; i < setArr.length; i++) {
   }
   if (!curSet.nature) {
     // Nature might be slashed and wasn't caught by PS api
-    let natureLine = setArr[i].match(/^(.*)Nature$/m)[0];
+    let natureLine = setArr[i].match(/^(.*) Nature$/m)[0];
     if (natureLine && natureLine.includes('/')) {
-      curSet.nature = natureLine.replace('Nature', '').split('/').map(s => s.trim());
+      curSet.nature = natureLine.replace(' Nature', '').split('/').map(s => s.trim());
     }
   }
   curSet.weight = 0;
