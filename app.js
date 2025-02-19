@@ -20,7 +20,7 @@ for (let i = 0; i < setArr.length; i++) {
   const curSet = Teams.import(setArr[i])[0];
   const curMon = Dex.species.get(curSet.species).id;
   if (!bfjson[tier][curMon]) {
-    bfjson[tier][curMon] = {weight: 0, sets: []};
+    bfjson[tier][curMon] = {weight: 1, sets: []};
   }
   if (curSet.ability.includes('/')) {
     curSet.ability = curSet.ability.split('/').map(s => s.trim());
@@ -40,7 +40,7 @@ for (let i = 0; i < setArr.length; i++) {
       curSet.nature = natureLine.replace(' Nature', '').split('/').map(s => s.trim());
     }
   }
-  curSet.weight = 0;
+  curSet.weight = 1;
   delete curSet.name;
   if (!curSet.gender) delete curSet.gender;
   if (curSet.level === 100) delete curSet.level;
