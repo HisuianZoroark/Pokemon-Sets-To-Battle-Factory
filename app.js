@@ -61,4 +61,7 @@ for (let i = 0; i < setArr.length; i++) {
   bfjson[tier][curMon].sets.push(curSet);
 }
 
+// Alphabetically sort
+bfjson[tier] = Object.fromEntries(Object.entries(bfjson[tier]).sort());
+
 fs.writeFileSync(`factorysets${tier}.json`, Stringify(bfjson, {maxLength: 120, indent: '\t'}));
